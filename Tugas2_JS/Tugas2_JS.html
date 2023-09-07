@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Pegawai</title>
+</head>
+<body>
+    <h1>Data Pegawai</h1>
+
+    <script>
+        // Input data pegawai
+        let pegawai = "Ridwan";
+        let jabatan = "Manager";
+        let status = "menikah";
+
+        // Gaji pokok berdasarkan jabatan
+        let gaji_pokok = 0;
+        if (jabatan === "Manager") {
+            gaji_pokok = 15000000; // 15 juta
+        } else if (jabatan === "Asisten Manager") {
+            gaji_pokok = 10000000; // 10 juta
+        } else if (jabatan === "Staff") {
+            gaji_pokok = 5000000; // 5 juta
+        }
+
+        // Tunjangan Jabatan (15% dari gaji pokok)
+        let tunjangan_jabatan = 0.15 * gaji_pokok;
+
+        // BPJS diambil 10 %
+        let bpjs = 0.10 * gaji_pokok;
+
+        // Jika menikah diambil 20%
+        let tunjangan_keluarga = 0;
+        if (status === "menikah") {
+            tunjangan_keluarga = 0.20 * gaji_pokok;
+        }
+
+        // hitungan total gaji
+        let total_gaji = gaji_pokok + tunjangan_jabatan - bpjs + tunjangan_keluarga;
+
+        // output tampil
+        document.write("<p>Nama Pegawai: " + pegawai + "</p>");
+        document.write("<p>Jabatan: " + jabatan + "</p>");
+        document.write("<p>Status: " + status + "</p>");
+        document.write("<p>Gaji Pokok: " + gaji_pokok + "</p>");
+        document.write("<p>Tunjangan Jabatan: " + tunjangan_jabatan + "</p>");
+        document.write("<p>BPJS: " + bpjs + "</p>");
+        document.write("<p>Tunjangan Keluarga: " + tunjangan_keluarga + "</p>");
+        document.write("<p>Total Gaji: " + total_gaji + "</p>");
+    </script>
+</body>
+</html>
